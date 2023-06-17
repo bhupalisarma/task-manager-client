@@ -21,7 +21,7 @@ function TodoApp() {
       setLoading(true); // Start loading
 
       const response = await axios.get(
-        `http://localhost:8000/api/v1/tasks?userId=${userId}` // Use the userId from the context
+        `https://task-manager-client-mu.vercel.app/api/v1/tasks?userId=${userId}` // Use the userId from the context
       );
       setTasks(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ function TodoApp() {
     try {
       setLoading(true); // Start loading
 
-      const response = await axios.post("http://localhost:8000/api/v1/tasks", {
+      const response = await axios.post("https://task-manager-client-mu.vercel.app/api/v1/tasks", {
         ...newTask,
         userId: userId,
       });
@@ -55,7 +55,7 @@ function TodoApp() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/v1/tasks/${taskId}`);
+      await axios.delete(`https://task-manager-client-mu.vercel.app/api/v1/tasks/${taskId}`);
       setTasks(tasks.filter((task) => task.id !== taskId));
     } catch (error) {
       console.error("Error deleting task:", error);

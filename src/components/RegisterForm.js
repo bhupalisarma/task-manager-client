@@ -40,7 +40,7 @@ function RegisterForm() {
       try {
         // Send the form data to the server
         const response = await axios.post(
-          "http://localhost:8000/api/v1/user/signup",
+          "https:/task-manager-client-mu.vercel.app/api/v1/user/signup",
           {
             username: formData.username,
             password: formData.password,
