@@ -40,7 +40,7 @@ function RegisterForm() {
       try {
         // Send the form data to the server
         const response = await axios.post(
-          "https:/task-manager-client-mu.vercel.app/api/v1/user/signup",
+          "https://task-manager-backend-opal.vercel.app/api/v1/user/signup",
           {
             username: formData.username,
             password: formData.password,
@@ -58,6 +58,7 @@ function RegisterForm() {
         // Save the username and userId to the AuthContext
         setAuthData(response.data.id, response.data.username);
       } catch (error) {
+        alert("Registration failed");
         console.error("Registration failed:", error);
         // Handle the error appropriately (e.g., show error message)
       }

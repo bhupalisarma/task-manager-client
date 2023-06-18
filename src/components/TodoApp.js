@@ -21,7 +21,7 @@ function TodoApp() {
       setLoading(true); // Start loading
 
       const response = await axios.get(
-        `https://task-manager-client-mu.vercel.app/api/v1/tasks?userId=${userId}` // Use the userId from the context
+        `https://task-manager-backend-opal.vercel.app/api/v1/tasks?userId=${userId}` // Use the userId from the context
       );
       setTasks(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ function TodoApp() {
     try {
       setLoading(true); // Start loading
 
-      const response = await axios.post("https://task-manager-client-mu.vercel.app/api/v1/tasks", {
+      const response = await axios.post("https://task-manager-backend-opal.vercel.app/api/v1/tasks", {
         ...newTask,
         userId: userId,
       });
@@ -55,7 +55,7 @@ function TodoApp() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`https://task-manager-client-mu.vercel.app/api/v1/tasks/${taskId}`);
+      await axios.delete(`https://task-manager-backend-opal.vercel.app/api/v1/tasks/${taskId}`);
       setTasks(tasks.filter((task) => task.id !== taskId));
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -64,7 +64,7 @@ function TodoApp() {
 
   return (
     <div className="p-6 bg-white">
-      <h2 className="text-4xl font-bold mb-8 text-center">Task Manager</h2>
+      <h2 className="text-4xl font-bold mb-8 text-center">Task Management System</h2>
       <form onSubmit={createTask} className="mb-4 bg-gray-100 w-full p-2">
         <div className="mb-2 bg-gray-100 rounded-lg py-2 px-2">
           <label

@@ -37,7 +37,7 @@ function LoginForm() {
 
         // Send login request to the server
         const response = await axios.post(
-          "https:/task-manager-client-mu.vercel.app/api/v1/user/login",
+          "https://task-manager-backend-opal.vercel.app/api/v1/user/login",
           formData
         );
 
@@ -53,6 +53,7 @@ function LoginForm() {
         }
       } catch (error) {
         // Handle request error
+        alert("Login failed.Please try again");
         console.log("Login failed", error);
       } finally {
         setLoading(false); // Stop loading
