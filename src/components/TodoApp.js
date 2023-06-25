@@ -21,7 +21,7 @@ function TodoApp() {
       setLoading(true); // Start loading
 
       const response = await axios.get(
-        `https://task-manager-backend-opal.vercel.app/api/v1/tasks?userId=${userId}` // Use the userId from the context
+        `https://backend-5l4pm4a6m-tusharnath10-gmailcom.vercel.app/api/v1/tasks?userId=${userId}` // Use the userId from the context
       );
       setTasks(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ function TodoApp() {
     try {
       setLoading(true); // Start loading
 
-      const response = await axios.post("https://task-manager-backend-opal.vercel.app/api/v1/tasks", {
+      const response = await axios.post("https://backend-5l4pm4a6m-tusharnath10-gmailcom.vercel.app/api/v1/tasks", {
         ...newTask,
         userId: userId,
       });
@@ -55,7 +55,7 @@ function TodoApp() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`https://task-manager-backend-opal.vercel.app/api/v1/tasks/${taskId}`);
+      await axios.delete(`https://backend-5l4pm4a6m-tusharnath10-gmailcom.vercel.app//api/v1/tasks/${taskId}`);
       setTasks(tasks.filter((task) => task.id !== taskId));
     } catch (error) {
       console.error("Error deleting task:", error);
